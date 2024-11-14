@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('transaction_details', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('TransactionHeaderid');
+            $table->unsignedBigInteger('jadwal_id');
+            $table->foreign('TransactionHeaderid')->references('id')->on('transaction_headers')->onDelete('cascade');
+
+            $table->foreign('jadwal_id')->references('jadwal_id')->on('jadwals')->onDelete('cascade');
+            $table->integer('quantity');
             $table->timestamps();
         });
     }

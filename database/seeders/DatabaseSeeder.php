@@ -20,7 +20,12 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-
+            FilmSeeder::class,
+            StudioSeeder::class,
+            JadwalSeeder::class,
+            UserSeeder::class,
+            TransactionHeaderSeeder::class,
+            TransactionDetailSeeder::class,
         ]);
     }
 }

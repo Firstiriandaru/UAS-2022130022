@@ -12,7 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('films', function (Blueprint $table) {
-            $table->id();
+            $table->id('film_id');
+            $table->string('judulfilm', 255);
+            $table->string('genre');
+            $table->string('image_url');
+            $table->integer('durasi');
+            $table->integer('rating');
+            $table->date('tanggal_rilis');
+            $table->date('tanggal_selesai');
             $table->timestamps();
         });
     }
