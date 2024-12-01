@@ -25,8 +25,8 @@ class JadwalSeeder extends Seeder
                 'film_id' => $faker->randomElement($filmIds),
                 'studio_id' => $faker->randomElement($studioIds),
                 'tanggal_penayangan' => $faker->dateTimeBetween('now', '+1 month')->format('Y-m-d'),
-                'waktu_mulai' => $faker->time(),
-                'waktu_selesai' => $faker->time(),
+                'waktu_mulai' => $faker->time('H:i:s'),
+                'waktu_selesai' => $faker->time('H:i:s'),
             ]);
         }
     }

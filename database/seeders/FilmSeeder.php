@@ -15,6 +15,7 @@ class FilmSeeder extends Seeder
     public function run(): void
     {
         $films = [
+            ['name' => 'The Batman', 'image' => 'storage/Poster Bioskop/The Batman.png', 'genre' => 'Action'],
             ['name' => 'Conjuring', 'image' => 'storage/Poster Bioskop/Conjuring.jpg', 'genre' => 'Horror'],
             ['name' => 'Inception', 'image' => 'storage/Poster Bioskop/Inception.jpg', 'genre' => 'Action'],
             ['name' => 'Indiana Jones', 'image' => 'storage/Poster Bioskop/Indiana Jones.jpg', 'genre' => 'Adventure'],

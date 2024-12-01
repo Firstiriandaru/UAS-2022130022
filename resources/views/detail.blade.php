@@ -84,7 +84,7 @@
                         <h5>Available Dates</h5>
                         <div class="d-flex flex-row overflow-auto">
                             @foreach ($jadwals as $idx => $schedules)
-                                <button class="btn btn-outline-primary mx-1 date-btn" data-date="{{ $schedules->tanggal_penayangan }}">
+                                <button class="btn btn-outline-success mx-1 date-btn" data-date="{{ $schedules->tanggal_penayangan }}">
 
 
                                     {{ \Carbon\Carbon::parse($schedules->tanggal_penayangan)->format('d M Y') }} - {{$schedules->studio->studio_name }}

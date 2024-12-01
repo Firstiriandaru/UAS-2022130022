@@ -25,7 +25,7 @@ class TransactionDetailSeeder extends Seeder
             TransactionDetail::create([
                 'TransactionHeaderId' => $faker->randomElement($headerIds),
                 'jadwal_id' => $faker->randomElement($jadwalIds),
-                'quantity' => $faker->numberBetween(1, 5),
+                'quantity' => $faker->numberBetween(1, 100),
             ]);
         }
     }
