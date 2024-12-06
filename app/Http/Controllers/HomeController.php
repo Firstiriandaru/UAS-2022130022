@@ -46,6 +46,11 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         $scheduleId = $request->input('schedule_id');
+
+        // ambil harga untuk mendapatkan harga
+        $jadwal = Jadwal::findOrFail($scheduleId);
+        $price = $jadwal->film->harga ?? 0; // Asumsikan Anda menambahkan kolom harga di model Film
+
         $transaction = new TransactionHeader();
         $transaction->user_id = Auth::user()->id;
         $transaction->save();
@@ -53,6 +58,8 @@ class HomeController extends Controller
         $transactionDetail = new TransactionDetail();
         $transactionDetail->jadwal_id = $scheduleId;
         $transactionDetail->quantity =1;
+        $transactionDetail->price = $price;
+        $transactionDetail->total_price = $price * 1; // Hitung total harga
         $transactionDetail->TransactionHeaderId=$transaction->id;
         $transactionDetail->save();
 

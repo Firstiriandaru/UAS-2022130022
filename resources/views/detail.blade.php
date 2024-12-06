@@ -73,12 +73,14 @@
                     <p><strong>Rating:</strong> {{ $jadwals[0]->film->rating }}</p>
                     <p><strong>Tanggal Rilis:</strong> {{ \Carbon\Carbon::parse($jadwals[0]->film->tanggal_rilis)->format('d M Y') }}</p>
                     <p><strong>Tanggal Selesai:</strong> {{ \Carbon\Carbon::parse($jadwals[0]->film->tanggal_selesai)->format('d M Y') }}</p>
+                    <p><strong>Harga:</strong> Rp. {{ isset($jadwals[0]->film->harga) && $jadwals[0]->film->harga > 0 ? number_format($jadwals[0]->film->harga, 0, ',', '.') : '50.000' }}</p>
 
-                    @if ($jadwals[0]->film->image_url)
+
+                    {{-- @if ($jadwals[0]->film->image_url)
                         <img src="{{ $jadwals[0]->film->image_url }}" class="img-fluid" alt="Film image">
                     @else
                         <img src="https://via.placeholder.com/150" class="img-fluid" alt="No Image Available">
-                    @endif
+                    @endif --}}
                     @endif
                     <div class="mt-4">
                         <h5>Available Dates</h5>

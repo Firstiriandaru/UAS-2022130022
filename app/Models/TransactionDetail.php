@@ -13,6 +13,8 @@ class TransactionDetail extends Model
         'transaction_headerid',
         'jadwal_id',
         'quantity',
+        'price', // Tambahkan kolom price
+        'total_price' // Tambahkan kolom total_price
     ];
 
     // Relationship with Jadwal
